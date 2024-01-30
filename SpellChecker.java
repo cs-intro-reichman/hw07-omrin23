@@ -38,6 +38,9 @@ public class SpellChecker {
 	//returns the edit distance
 	//between these two words, as an integer
 	public static int levenshtein(String word1, String word2) {
+
+		word1 = word1.toLowerCase();
+		word2 = word2.toLowerCase();
 		
 		if (word2.length() == 0) {
 			return word1.length();
@@ -73,7 +76,6 @@ public class SpellChecker {
 	// it returns the closest word, otherwise it returns the original word
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		
-		word = word.toLowerCase();
 		int min = Integer.MAX_VALUE;
 		String minWord = "";
 
